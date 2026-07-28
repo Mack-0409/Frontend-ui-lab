@@ -1,0 +1,5 @@
+.banner-holder {
+    background-image: url(IMG/banner.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
