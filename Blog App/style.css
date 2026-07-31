@@ -1,4 +1,4 @@
-.banner-holder {
+.banner-holder, .main-page-header{
     background-image: url(IMG/banner.jpg);
     background-size: cover;
     background-position: bottom;
