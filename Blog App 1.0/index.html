@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBlog — Stories for Front-End Developers</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS (CDN) - utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-blog sticky-top">
+      <div class="container">
+        <a class="navbar-brand fs-3" href="index.html">
+          Dev<span class="dot">Blog</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-brand btn-sm px-3 py-2" href="post.html">Write a Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <span class="badge badge-pill-custom px-3 py-2 mb-3 fw-semibold">
+              ✦ Front-End Stories & Tutorials
+            </span>
+            <h1 class="display-4 fw-bold lh-1 mb-3">
+              Ideas worth <span class="text-brand">reading</span>, built by developers.
+            </h1>
+            <p class="lead text-muted mb-4">
+              Practical articles on HTML, CSS, JavaScript and the craft of building
+              for the web — no fluff, just signal.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#blog" class="btn btn-brand btn-lg px-4">Read the Blog</a>
+              <a href="about.html" class="btn btn-outline-brand btn-lg px-4">About Us</a>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block text-center">
+            <img
+              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&auto=format&fit=crop"
+              alt="Workspace with a laptop and code"
+              class="img-fluid rounded-4 shadow-lg"
+              style="max-height: 360px; object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Blog listing -->
+    <main class="container py-5" id="blog">
+      <div class="row mb-4">
+        <div class="col-lg-6">
+          <h2 class="section-title fs-2 mb-1">Latest Articles</h2>
+          <p class="text-muted mb-0">
+            Fresh perspectives on web development.
+            <span id="result-count" class="fw-semibold text-brand"></span>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="search-box">
+            <input
+              type="search"
+              id="search-input"
+              class="form-control"
+              placeholder="Search by title, author or keyword..."
+              aria-label="Search articles"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Category filter -->
+      <div
+        id="category-filter"
+        class="category-filter d-flex flex-wrap gap-2 mb-4"
+        aria-label="Filter posts by category"
+      ></div>
+
+      <!-- Posts grid -->
+      <div id="posts-grid" class="row g-4"></div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="py-5">
+      <div class="container">
+        <div
+          class="rounded-4 p-5 text-center text-white"
+          style="
+            background: linear-gradient(135deg, #6d28d9, #db2777);
+          "
+        >
+          <h2 class="fw-bold mb-2">Never miss a story</h2>
+          <p class="mb-4 opacity-75">
+            Join the newsletter for weekly front-end tips, straight to your inbox.
+          </p>
+          <form
+            class="row g-2 justify-content-center"
+            onsubmit="event.preventDefault(); alert('Thanks for subscribing!'); this.reset();"
+          >
+            <div class="col-md-6 col-lg-5">
+              <input
+                type="email"
+                class="form-control form-control-lg rounded-pill"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-light btn-lg rounded-pill px-4 fw-semibold" type="submit">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-blog py-5 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="navbar-brand fs-3 text-white" href="index.html">
+              Dev<span class="text-purple-400">Blog</span>
+            </a>
+            <p class="mt-3 mb-0">
+              A front-end only blog application built with HTML, CSS, JavaScript,
+              Bootstrap and Tailwind CSS.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6>Explore</h6>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="d-inline-block py-1">Home</a></li>
+              <li><a href="#blog" class="d-inline-block py-1">Articles</a></li>
+              <li><a href="about.html" class="d-inline-block py-1">About</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6>Categories</h6>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="d-inline-block py-1">Web Dev</a></li>
+              <li><a href="index.html" class="d-inline-block py-1">CSS</a></li>
+              <li><a href="index.html" class="d-inline-block py-1">JavaScript</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h6>Follow</h6>
+            <div class="d-flex gap-2 mt-2">
+              <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3">Twitter</a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3">GitHub</a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary mt-4" />
+        <p class="text-center mb-0 small">
+          &copy; 2026 DevBlog. Built with <span class="text-purple-400">&hearts;</span> for front-end learners.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
